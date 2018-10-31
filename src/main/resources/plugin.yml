@@ -1,0 +1,23 @@
+name: ComBlockCommandSearchAndReplace
+main: de.relulu.ComBlockCommandSearchAndReplace.Init
+version: 0.0.1
+api-version: 1.13
+author: ReLuLu
+commands:
+  blockpos1:
+    description: Sets the reference block for the relation calculation.
+    usage: Type /bp1 while looking at your desired reference block or use coordinates /bp1 <x y z>.
+    aliases: [bp1, bpos1]
+  blockpos2:
+    description: Sets the target block for the relation calculation.
+    usage: Type /bp2 while looking at your desired target block or use coordinates /bp2 <x y z>
+    aliases: [bp2, bpos2]
+  blockcalc:
+    description: Calculates the vector from blockpos1 to blockpos2.
+    usage: /blockcalc after both blockpos have been set
+    aliases: [bc, bcalc]
+  blockreplace:
+    description: Modifies / replaces the commands inside of a command blocks (basically a search and replace operation).
+    usage: /blockreplace * [new command], /blockreplace ["Foo"] ["Bar"]
+    aliases: [br, brepl]
+    

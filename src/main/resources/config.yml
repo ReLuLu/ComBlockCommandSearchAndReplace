@@ -1,0 +1,13 @@
+#ComBlockCommandSearchAndReplace Configuration File
+
+#debug mode active or not (will show additional messages to help troubleshooting)
+debug: false
+
+# prefix message in chat
+message-prefix: '&2[&rVectorCalc&2]'
+
+# primary color of chat messages
+primary-color: '&a'
+
+# secondary color of chat messages
+secondary-color: '&r'
