@@ -33,12 +33,8 @@ public class BlockReplaceCommandHandler {
 				this.newAsteriskCommand = String.join(" ", comargs);
 			} else {
 				this.comargs = args;
-				for(int i = 0; i < comargs.length; i++) {
-					mh.tell(p, "comargs["+i+"] " + comargs[i]);
-				}
 				this.quotedTokensCount = countQuotes(comargs);
 				this.hasQuotedTokens = hasQuotedTokens(quotedTokensCount);
-				mh.tell(p, "quotedTokensCount " + quotedTokensCount + ", hasQuotedTokens " + String.valueOf(hasQuotedTokens));
 				if(hasQuotedTokens) {
 					this.comargs = organizeQuotedTokens(comargs);
 				}
