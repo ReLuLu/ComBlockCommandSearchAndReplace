@@ -3,7 +3,8 @@
 #debug mode active or not (will show additional messages to help troubleshooting)
 debug: false
 
-# only check the first X characters of a command for replaceable values
+# only check the first X characters of a command for replaceable values;
+# 0 checks everything
 search-first-chars: 20
 
 # prefix message in chat
