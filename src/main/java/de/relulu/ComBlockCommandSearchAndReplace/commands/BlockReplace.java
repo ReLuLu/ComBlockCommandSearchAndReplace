@@ -44,7 +44,7 @@ public class BlockReplace implements CommandExecutor {
 				// nur wenn beide pos gesetzt sind
 				if(pos1exists && pos2exists) {
 					
-					BlockReplaceCommandHandler blrch = new BlockReplaceCommandHandler(mh, p, args);
+					BlockReplaceCommandHandler blrch = new BlockReplaceCommandHandler(brman, mh, p, args);
 					
 					CuboidCalculation cc = new CuboidCalculation(p,
 							bpman.getBlockPosition(p.getUniqueId(), true),

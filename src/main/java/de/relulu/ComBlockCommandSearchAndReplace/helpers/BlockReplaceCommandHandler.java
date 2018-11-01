@@ -1,10 +1,13 @@
 package de.relulu.ComBlockCommandSearchAndReplace.helpers;
 
 import java.util.HashMap;
+
+import de.relulu.ComBlockCommandSearchAndReplace.BlockRelationManager;
 import org.bukkit.entity.Player;
 
 public class BlockReplaceCommandHandler {
-	
+
+	private BlockRelationManager brman;
 	private MessageHandler mh;
 	private Player p;
 	private boolean argsEmpty = true;
@@ -22,8 +25,9 @@ public class BlockReplaceCommandHandler {
 	 * @param player
 	 * @param args
 	 */
-	public BlockReplaceCommandHandler(MessageHandler mh, Player player, String[] args) {
-		this.mh = mh;
+	public BlockReplaceCommandHandler(BlockRelationManager brman, MessageHandler mh, Player player, String[] args) {
+		this.brman = brman;
+	    this.mh = mh;
 		this.p = player;
 		if(args.length > 0) {
 			this.argsEmpty = false;
@@ -225,7 +229,14 @@ public class BlockReplaceCommandHandler {
 		String newcblcommand = cblcommand;
 		for(String s : sartokens.keySet()) {
 			if(cblcommand.contains(s)) {
-				newcblcommand = newcblcommand.replaceFirst(s, sartokens.get(s));
+				if(brman.getConfigHelper().searchFirstCharacters() == 0) {
+                    newcblcommand = newcblcommand.replaceFirst(s, sartokens.get(s));
+                } else if(newcblcommand.length() >= brman.getConfigHelper().searchFirstCharacters()) {
+                    String firstpart = newcblcommand.substring(0, brman.getConfigHelper().searchFirstCharacters());
+                    firstpart = firstpart.replaceFirst(s, sartokens.get(s));
+                    String secondpart = newcblcommand.substring(brman.getConfigHelper().searchFirstCharacters());
+                    newcblcommand = firstpart + secondpart;
+                }
 				return newcblcommand;
 			}
 		}

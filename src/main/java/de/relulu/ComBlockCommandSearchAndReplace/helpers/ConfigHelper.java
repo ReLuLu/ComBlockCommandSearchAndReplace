@@ -29,5 +29,14 @@ public class ConfigHelper {
 	public boolean isDebug() {
 		return cfg.getBoolean("debug", false);
 	}
+
+	/**
+	 * Gibt zurück, bis zum wievielten Zeichen eines Befehls überprüft werden soll
+	 *
+	 * @return
+	 */
+	public int searchFirstCharacters() {
+		return cfg.getInt("search-first-chars", 20);
+	}
 	
 }
