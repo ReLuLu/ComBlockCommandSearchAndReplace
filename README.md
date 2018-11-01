@@ -18,6 +18,8 @@ so you could use it as
 * **_/blockreplace <<a>effect> <<a>minecraft:effect> <<a>tp> <<a>minecraft:tp> <<a>clear> <<a>minecraft:clear> <<a>give> <<a>minecraft:give>_**
 but you might want to specify more than just a word because you realised replacing clear with minecraft:clear screwed up the /effect clear command, use quotes ("") and run the process again
 * **_/blockreplace <<a>"effect minecraft:clear"> <<a>"minecraft:effect clear">_**
+and in case you realise command blocks that work with chestplates no longer work, you might want to fix what you broke before
+* **_/blockreplace <<a>"sminecraft:tpl"> <<a>"stpl">_**
 
 
 ### output
