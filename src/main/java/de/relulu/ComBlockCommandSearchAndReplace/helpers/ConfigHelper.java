@@ -3,7 +3,7 @@ package de.relulu.ComBlockCommandSearchAndReplace.helpers;
 import org.bukkit.configuration.file.FileConfiguration;
 
 /**
- * Diese Klasse kümmert sich um das Auslesen und Bereitstellen von Konfigurationsparametern
+ * Diese Klasse kÃ¼mmert sich um das Auslesen und Bereitstellen von Konfigurationsparametern
  * 
  * @author ReLuLu
  *
@@ -13,7 +13,7 @@ public class ConfigHelper {
 	private FileConfiguration cfg;
 	
 	/**
-	 * Konstruktor für für den Konfigurationsmanager
+	 * Konstruktor fÃ¼r den Konfigurationsmanager
 	 * 
 	 * @param fcfg
 	 */
@@ -22,7 +22,7 @@ public class ConfigHelper {
 	}
 	
 	/**
-	 * Gibt zurück, ob debug-Ausgaben aktiv sind oder nicht
+	 * Gibt zurÃ¼ck, ob debug-Ausgaben aktiv sind oder nicht
 	 * 
 	 * @return
 	 */

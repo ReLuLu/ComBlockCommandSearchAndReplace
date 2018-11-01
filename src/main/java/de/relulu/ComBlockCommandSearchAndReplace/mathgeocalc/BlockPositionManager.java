@@ -17,7 +17,7 @@ public class BlockPositionManager {
 	/**
 	 * Setzt den [ Spieler | BlockPosition ] Datensatz.
 	 * 
-	 * @param uuid UUID des ausführenden Spielers
+	 * @param uuid UUID des ausfÃ¼hrenden Spielers
 	 * @param loc
 	 * @param pos1 der boolean, der zwischen Position 1 und 2 unterscheidet (true 1, false 2)
 	 * @return
@@ -42,7 +42,7 @@ public class BlockPositionManager {
 	/**
 	 * Holt einen [ Spieler | BlockPosition ] Datensatz.
 	 * 
-	 * @param uuid UUID des ausführenden Spielers
+	 * @param uuid UUID des ausfÃ¼hrenden Spielers
 	 * @param pos1 der boolean, der zwischen Position 1 und 2 unterscheidet (true 1, false 2)
 	 * @return
 	 */
@@ -60,15 +60,15 @@ public class BlockPositionManager {
 	}
 	
 	/**
-	 * Löscht den [ Spieler | BlockPosition ] Datensatz.
+	 * LÃ¶scht den [ Spieler | BlockPosition ] Datensatz.
 	 * 
-	 * @param uuid UUID des ausführenden Spielers
+	 * @param uuid UUID des ausfÃ¼hrenden Spielers
 	 * @param pos1 der boolean, der zwischen Position 1 und 2 unterscheidet (true 1, false 2)
 	 * @return
 	 */
 	private boolean removeBlockPosition(UUID uuid, boolean pos1) {
 		
-		// speichert beim Löschen den bisher gespeicherten Datensatz zwischen
+		// speichert beim LÃ¶schen den bisher gespeicherten Datensatz zwischen
 		Location temploc;
 		// wenn pos1
 		if(pos1) {
@@ -87,7 +87,7 @@ public class BlockPositionManager {
 	 * Setzt den [ Spieler | BlockPosition2 ] Datensatz.
 	 * @deprecated
 	 * 
-	 * @param uuid UUID des ausführenden Spielers
+	 * @param uuid UUID des ausfÃ¼hrenden Spielers
 	 * @param loc1
 	 * @return
 	 */
@@ -101,10 +101,10 @@ public class BlockPositionManager {
 	}
 	
 	/**
-	 * Löscht den [ Spieler | BlockPosition2 ] Datensatz.
+	 * LÃ¶scht den [ Spieler | BlockPosition2 ] Datensatz.
 	 * @deprecated
 	 * 
-	 * @param uuid UUID des ausführenden Spielers
+	 * @param uuid UUID des ausfÃ¼hrenden Spielers
 	 * @return
 	 */
 	@SuppressWarnings("unused")
@@ -118,7 +118,7 @@ public class BlockPositionManager {
 	/**
 	 * Checkt, ob zu einem Spieler das Mapping der BlockPosition valide ist.
 	 * 
-	 * @param uuid UUID des ausführenden Spielers
+	 * @param uuid UUID des ausfÃ¼hrenden Spielers
 	 * @param pos1 der boolean, der zwischen Position 1 und 2 unterscheidet (true 1, false 2)
 	 * @return
 	 */
@@ -140,25 +140,25 @@ public class BlockPositionManager {
 	}
 	
 	/**
-	 * Prüft, ob beide Blockpositionen gesetzt sind.
+	 * PrÃ¼ft, ob beide Blockpositionen gesetzt sind.
 	 * 
-	 * @param uuid UUID des ausführenden Spielers
+	 * @param uuid UUID des ausfÃ¼hrenden Spielers
 	 * @return
 	 */
 	public boolean hasAllBlockPositions(UUID uuid) {
-		// potenziell fehleranfällig wenn ein Mapping zu einer Key null ist
+		// potenziell fehleranfÃ¤llig wenn ein Mapping zu einer Key null ist
 		// return (blockpos1.containsKey(uuid) && blockpos2.containsKey(uuid));
 		
-		// jedes Mapping auf validen Inhalt überprüfen
-		// nur wenn beide Positionen ein valides Mapping haben wird true zurückgegeben
+		// jedes Mapping auf validen Inhalt Ã¼berprÃ¼fen
+		// nur wenn beide Positionen ein valides Mapping haben wird true zurÃ¼ckgegeben
 		// mit true und false wird zwischen blockpos1 und blockpos2 unterschieden
 		return (hasValidBlockPosition(uuid, true) && hasValidBlockPosition(uuid, false));
 	}
 	
 	/**
-	 * Löscht die Datensätze von Spieler und BlockPositionen
+	 * LÃ¶scht die DatensÃ¤tze von Spieler und BlockPositionen
 	 * 
-	 * @param uuid UUID des ausführenden Spielers
+	 * @param uuid UUID des ausfÃ¼hrenden Spielers
 	 * @return
 	 */
 	private boolean cleanBlockPositions(UUID uuid) {
@@ -170,10 +170,10 @@ public class BlockPositionManager {
 	/**
 	 * Erzeugt eine Location anhand von Koordinaten
 	 * 
-	 * @param w die Welt, in der sich der ausführende Spieler befindet
-	 * @param x die X Koordinate für die Location
-	 * @param y die Y Koordinate für die Location
-	 * @param z die Z Koordinate für die Location
+	 * @param w die Welt, in der sich der ausfÃ¼hrende Spieler befindet
+	 * @param x die X Koordinate fÃ¼r die Location
+	 * @param y die Y Koordinate fÃ¼r die Location
+	 * @param z die Z Koordinate fÃ¼r die Location
 	 * @return
 	 */
 	public Location xyzToLocation(World w, double x, double y, double z) {
@@ -183,11 +183,11 @@ public class BlockPositionManager {
 	}
 	
 	/**
-	 * Berechnet die Blockrelationen, gibt diese als Location zurück und vernichtet die Datensätze.
+	 * Berechnet die Blockrelationen, gibt diese als Location zurÃ¼ck und vernichtet die DatensÃ¤tze.
 	 * Berechnungsweise: Strecke AB = B-A
 	 * Beispiel: A{1 4 2}, B{5 7 8} | {5 7 8} - {1 4 2} | {(5-1) (7-4) (8-2)} | = {4 3 6}
 	 * 
-	 * @param p Player-Objekt des ausführenden Spielers
+	 * @param p Player-Objekt des ausfÃ¼hrenden Spielers
 	 * @return
 	 */
 	public Location calculate(Player p) {
@@ -211,7 +211,7 @@ public class BlockPositionManager {
 	}
 	
 	/**
-	 * Gibt das Singleton zurück.
+	 * Gibt das Singleton zurÃ¼ck.
 	 * @return
 	 */
 	public static BlockPositionManager getInstance() {

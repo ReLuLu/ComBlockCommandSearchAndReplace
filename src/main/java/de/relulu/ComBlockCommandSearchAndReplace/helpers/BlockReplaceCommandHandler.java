@@ -50,7 +50,7 @@ public class BlockReplaceCommandHandler {
 	public String doCommandModification(String cblcommand, String[] args) {
 		String newcblcommand = cblcommand;
 		if(args.length < 1) {
-			mh.tell(p, "Komblockbefehl unverändert: ", cblcommand);
+			mh.tell(p, "Komblockbefehl unverÃ¤ndert: ", cblcommand);
 		}
 		
 		else if(args.length >= 2) {
@@ -70,7 +70,7 @@ public class BlockReplaceCommandHandler {
 				}
 				
 			} catch (Exception e) {
-				mh.tell(p, "Komblockbefehl wegen Fehler ungeändert: ", e.toString());
+				mh.tell(p, "Komblockbefehl wegen Fehler ungeÃ¤ndert: ", e.toString());
 			}
 		}
 		return newcblcommand;
@@ -103,14 +103,14 @@ public class BlockReplaceCommandHandler {
 	private String[] cutAsteriskArray(String[] args) {
 		String[] cutargs = new String[args.length-1];
 		
-		// altes Array mit dem unnötigen Asterisk am Anfang auf neues Array übertragen
+		// altes Array mit dem unnÃ¶tigen Asterisk am Anfang auf neues Array Ã¼bertragen
 		try {
 			for(int i = 1; i< args.length; i++) {
 				// i kann niemals < 0 sein weil bei 1 begonnen wird
 				cutargs[i-1] = args[i];
 			}
 			
-		// für den unwahrscheinlichen Fall dass eine ArrayIndexOutOfBoundsException auftritt
+		// fÃ¼r den unwahrscheinlichen Fall dass eine ArrayIndexOutOfBoundsException auftritt
 		} catch (Exception e) {
 			mh.tell(p, "Fehler mit dem *-Parameter", e.toString());
 		}

@@ -17,7 +17,7 @@ public class BlockReplaceRectangleSlice extends BukkitRunnable {
 	private int zref;
 	
 	/**
-	 * Konstruktor mit zwei Kantenl‰ngen
+	 * Konstruktor mit zwei Kantenl√§ngen
 	 * @param y
 	 * @param z
 	 */
@@ -40,9 +40,9 @@ public class BlockReplaceRectangleSlice extends BukkitRunnable {
 					CommandBlock cbl = (CommandBlock)bst;
 					cbl.setCommand(blrch.doCommandModification(cbl.getCommand(), blrch.getCommandArgs()));
 					cbl.update(true);
-					bst.update(true); // falls Updaten des CommandBlock fehlschl‰gt, update den state auch mal mit
+					bst.update(true); // falls Updaten des CommandBlock fehlschl√§gt, update den state auch mal mit
 				}
-				bst = null; // in der Hoffnung dass der GarbageCollector die Objekte asap wegr‰umt
+				bst = null; // in der Hoffnung dass der GarbageCollector die Objekte asap wegr√§umt
 				bl = null;
 				l = null; 
 			}

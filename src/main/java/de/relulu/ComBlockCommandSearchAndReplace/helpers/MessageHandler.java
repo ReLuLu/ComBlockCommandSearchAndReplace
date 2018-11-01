@@ -11,8 +11,8 @@ import org.bukkit.command.CommandSender;
 public class MessageHandler {
 
         private String messageprefix = ""; // redundant init
-        private String primarycolor = "§e"; // redundant init
-        private String secondarycolor = "§r"; // redundant init
+        private String primarycolor = "Â§e"; // redundant init
+        private String secondarycolor = "Â§r"; // redundant init
 
         /**
          * Constructor for the MessageHandler object with everything it needs to know

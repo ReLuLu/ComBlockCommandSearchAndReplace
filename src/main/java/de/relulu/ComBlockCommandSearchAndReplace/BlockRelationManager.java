@@ -32,14 +32,14 @@ public class BlockRelationManager {
 		this.plugin = plugin;
 		this.confhelp = new ConfigHelper(plugin.getConfig());	
 		this.mh = new MessageHandler(
-				!plugin.getConfig().getString("message-prefix", "").replace("&", "§").equals("") ? (plugin.getConfig().getString("message-prefix", "").replace("&", "§") + " ") : plugin.getConfig().getString("message-prefix", "").replace("&", "§"), // leerer String als default
-				plugin.getConfig().getString("primary-color", "§e").replace("&", "§"), // §e als default
-				plugin.getConfig().getString("secondary-color", "§r").replace("&", "§") // §r als default
+				!plugin.getConfig().getString("message-prefix", "").replace("&", "Â§").equals("") ? (plugin.getConfig().getString("message-prefix", "").replace("&", "Â§") + " ") : plugin.getConfig().getString("message-prefix", "").replace("&", "Â§"), // leerer String als default
+				plugin.getConfig().getString("primary-color", "Â§e").replace("&", "Â§"), // Â§e als default
+				plugin.getConfig().getString("secondary-color", "Â§r").replace("&", "Â§") // Â§r als default
 				);
 	}
 	
 	/**
-	 * Getter für's Log
+	 * Getter fÃ¼r's Log
 	 * 
 	 * @return
 	 */
@@ -48,8 +48,8 @@ public class BlockRelationManager {
 	}
 	
 	/**
-	 * Gibt den ConfigManager zurück, um Zugriff 
-	 * auf Konfigurationsinhalte zu ermöglichen
+	 * Gibt den ConfigManager zurÃ¼ck, um Zugriff 
+	 * auf Konfigurationsinhalte zu ermÃ¶glichen
 	 * 
 	 * @return
 	 */
@@ -58,8 +58,8 @@ public class BlockRelationManager {
 	}
 	
 	/**
-	 * Gibt den MessageHelper zurück, um mit 
-	 * vereinfachten Chatausgaben arbeiten zu können.
+	 * Gibt den MessageHelper zurÃ¼ck, um mit 
+	 * vereinfachten Chatausgaben arbeiten zu kÃ¶nnen.
 	 * 
 	 * @return
 	 */
@@ -68,7 +68,7 @@ public class BlockRelationManager {
 	}
 
 	/**
-	 * Gibt die Instanz des Plugins zurück
+	 * Gibt die Instanz des Plugins zurÃ¼ck
 	 * @return
 	 */
 	public Plugin getPluginInstance() {

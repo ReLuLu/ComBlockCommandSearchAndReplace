@@ -18,6 +18,6 @@ commands:
     aliases: [bc, bcalc]
   blockreplace:
     description: Modifies / replaces the commands inside of a command blocks (basically a search and replace operation).
-    usage: /blockreplace * [new command], /blockreplace ["Foo"] ["Bar"]
+    usage: /blockreplace * [new command], /blockreplace [Foo] [Bar] ["Foo bar"] ["Bar foo"]
     aliases: [br, brepl]
     

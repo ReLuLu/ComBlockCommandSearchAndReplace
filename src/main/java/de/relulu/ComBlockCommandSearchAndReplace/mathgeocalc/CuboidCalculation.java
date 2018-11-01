@@ -14,12 +14,12 @@ public class CuboidCalculation {
 	private Location p7;
 	private Location p8;
 	private Location pVec; // Raumdiagonale
-	private Location pVecAbs; // Raumdiagonale vom kleinsten Punkt aus, so konzipiert dass sie nur in positive Richtungen läuft
+	private Location pVecAbs; // Raumdiagonale vom kleinsten Punkt aus, so konzipiert dass sie nur in positive Richtungen lÃ¤uft
 	private Location pSmall; // damit wird der kleinste Punkt bestimmt
 	private boolean cornersValid = false;
 
 	/**
-	 * Konstruktor für die Quaderberechnungslogik
+	 * Konstruktor fÃ¼r die Quaderberechnungslogik
 	 * @param p
 	 * @param pos1
 	 * @param pos2
@@ -27,7 +27,7 @@ public class CuboidCalculation {
 	public CuboidCalculation(Player p, Location pos1, Location pos2) {
 		// Location direkt zuweisen geht nicht, weil es immer nur eine neue Referenz auf das selbe Location Objekt ist.
 		//this.p1 = new Location(pos1.getWorld(), pos1.getX(), pos1.getY(), pos1.getZ()); // Referenzpunkt setzen
-		//this.p8 = new Location(pos2.getWorld(), pos2.getX(), pos2.getY(), pos2.getZ()); // weil der letzte Punkt in der Zählung am anderen Ende der Raumdiagonale des Quaders ist
+		//this.p8 = new Location(pos2.getWorld(), pos2.getX(), pos2.getY(), pos2.getZ()); // weil der letzte Punkt in der ZÃ¤hlung am anderen Ende der Raumdiagonale des Quaders ist
 		
 		this.p1 = pos1.clone();
 		this.p8 = pos2.clone();
@@ -47,7 +47,7 @@ public class CuboidCalculation {
 		// doch lieber mit try-catch
 		try {
 			// Strecke AB -> B-A
-			vec = pos8.clone(); // um zu verhindern, dass die die Ausgangslocation im Speicher geändert wird, wird einer neuer durch Klonen erzeugt
+			vec = pos8.clone(); // um zu verhindern, dass die die Ausgangslocation im Speicher geÃ¤ndert wird, wird einer neuer durch Klonen erzeugt
 			vec = vec.subtract(pos1);
 		} catch(NullPointerException e) {
 			
@@ -56,7 +56,7 @@ public class CuboidCalculation {
 	}
 	
 	/**
-	 * Gibt den Betrag des Raumdiagonalvektors zurück
+	 * Gibt den Betrag des Raumdiagonalvektors zurÃ¼ck
 	 * @param vec den Vektor als Location mit positiven Koordinaten
 	 * @return
 	 */
@@ -65,7 +65,7 @@ public class CuboidCalculation {
 	}
 	
 	/**
-	 * Gibt den positiven Raumdiagonalvektor zurück
+	 * Gibt den positiven Raumdiagonalvektor zurÃ¼ck
 	 * @return
 	 */
 	public Location getSpaceDiagonalVectorAbs() {
@@ -76,7 +76,7 @@ public class CuboidCalculation {
 	 * Bestimmt die verbleibenden 6 Ecken des Quaders
 	 */
 	private boolean determineAllCorners() {
-		p2 = p1.clone().add(pVec.getX(), 0, 0); // ohne .clone() würde es die Ausgangslocation p1 editieren
+		p2 = p1.clone().add(pVec.getX(), 0, 0); // ohne .clone() wÃ¼rde es die Ausgangslocation p1 editieren
 		p3 = p1.clone().add(0, pVec.getY(), 0);
 		p4 = p1.clone().add(pVec.getX(), pVec.getY(), 0);
 		p5 = p1.clone().add(0, 0, pVec.getZ());
@@ -89,7 +89,7 @@ public class CuboidCalculation {
 	}
 	
 	/**
-	 * Gibt alle Ecken des Quaders als Location-Array zurück
+	 * Gibt alle Ecken des Quaders als Location-Array zurÃ¼ck
 	 * @return
 	 */
 	public Location[] getAllCorners() {
@@ -119,7 +119,7 @@ public class CuboidCalculation {
 	}
 	
 	/**
-	 * Gibt die kleinste Ecke des Quaders zurück
+	 * Gibt die kleinste Ecke des Quaders zurÃ¼ck
 	 * @return
 	 */
 	public Location getSmallestCorner() {
