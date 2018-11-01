@@ -36,7 +36,7 @@ public class ConfigHelper {
 	 * @return
 	 */
 	public int searchFirstCharacters() {
-		return cfg.getInt("search-first-chars", 20);
+		return cfg.getInt("search-first-chars", 0);
 	}
 	
 }
