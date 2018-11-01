@@ -15,6 +15,9 @@ import de.relulu.ComBlockCommandSearchAndReplace.mathgeocalc.BlockPositionManage
 import de.relulu.ComBlockCommandSearchAndReplace.mathgeocalc.BlockReplaceProcessWorker;
 import de.relulu.ComBlockCommandSearchAndReplace.mathgeocalc.CuboidCalculation;
 
+/**
+ * Handelt den Befehl zur Massenmodifikation von Befehlsblöcken
+ */
 public class BlockReplace implements CommandExecutor {
 
 	BlockPositionManager bpman = BlockPositionManager.getInstance();
@@ -51,7 +54,7 @@ public class BlockReplace implements CommandExecutor {
 					Location smallestCorner = cc.getSmallestCorner(); // Startpunkt
 					Location positiveVector = cc.getSpaceDiagonalVectorAbs(); // Vektor zum Endpunkt
 
-					// nur f�r debug
+					// nur für debug
 					if(brman.getConfigHelper().isDebug()) {
 						Location[] corners = cc.getAllCorners();
 						mh.tell(p, "Ecken validiert: ", String.valueOf(cc.allCornersValid()), "");

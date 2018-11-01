@@ -18,8 +18,11 @@ public class BlockReplaceRectangleSlice extends BukkitRunnable {
 	
 	/**
 	 * Konstruktor mit zwei Kantenlängen
-	 * @param y
-	 * @param z
+	 * @param blrch Instanz vom BlockReplaceCommandHandler
+	 * @param vec der Raumdiagonalvektor
+	 * @param xref Referenzpunkt x
+	 * @param yref Referenzpunkt y
+	 * @param zref Referenzpunkt z
 	 */
 	public BlockReplaceRectangleSlice(BlockReplaceCommandHandler blrch, Location vec, int xref, int yref, int zref) {
 		this.blrch = blrch;

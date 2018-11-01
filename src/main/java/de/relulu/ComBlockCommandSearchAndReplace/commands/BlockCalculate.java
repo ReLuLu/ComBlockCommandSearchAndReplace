@@ -44,9 +44,9 @@ public class BlockCalculate implements CommandExecutor {
 			
 			// debug
 			if(brman.getConfigHelper().isDebug()) {
-				mh.tell(p, "comparams.length: §r" + comparams.length);
+				mh.tell(p, "comparams.length: Â§r" + comparams.length);
 				for(int i = 0; i < comparams.length; i++) {
-					mh.tell(p, "comparams[§r" + i + mh.getPrimaryColor() + "]: §r" + comparams[i]);
+					mh.tell(p, "comparams[Â§r" + i + mh.getPrimaryColor() + "]: Â§r" + comparams[i]);
 				}
 			}
 
@@ -62,9 +62,9 @@ public class BlockCalculate implements CommandExecutor {
 					try {
 
 						vector = bpman.calculate(p);
-						mh.tell(p, "Der Vektor zum Zielblock ist { §r~" + vector.getBlockX() 
-								+ mh.getPrimaryColor() + " / §r~" + vector.getBlockY()
-								+ mh.getPrimaryColor() + " / §r~" + vector.getBlockZ() 
+						mh.tell(p, "Der Vektor zum Zielblock ist { Â§r~" + vector.getBlockX() 
+								+ mh.getPrimaryColor() + " / Â§r~" + vector.getBlockY()
+								+ mh.getPrimaryColor() + " / Â§r~" + vector.getBlockZ() 
 								+ mh.getPrimaryColor() + " }.");
 						
 					} catch(NullPointerException e) {

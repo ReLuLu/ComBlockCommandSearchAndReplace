@@ -47,23 +47,23 @@ public class BlockPosition1 implements CommandExecutor {
 			
 			// debug
 			if(brman.getConfigHelper().isDebug()) {
-				mh.tell(p, "comparams.length: §r" + comparams.length);
+				mh.tell(p, "comparams.length: Â§r" + comparams.length);
 				for(int i = 0; i < comparams.length; i++) {
-					mh.tell(p, "comparams[§r" + i + mh.getPrimaryColor() + "]: §r" + comparams[i]);
+					mh.tell(p, "comparams[Â§r" + i + mh.getPrimaryColor() + "]: Â§r" + comparams[i]);
 				}
 			}
 
 			// wenn der Befehl ohne Parameter daherkommt
 			if(comparams.length < 1) {
 				loc = bl.getLocation();
-				mh.tell(p, "Position 1 an §r" + loc.getX() 
-						+ mh.getPrimaryColor() + " / §r" + loc.getY() 
-						+ mh.getPrimaryColor() + " / §r" + loc.getZ() 
+				mh.tell(p, "Position 1 an Â§r" + loc.getX() 
+						+ mh.getPrimaryColor() + " / Â§r" + loc.getY() 
+						+ mh.getPrimaryColor() + " / Â§r" + loc.getZ() 
 						+ mh.getPrimaryColor() + " gesetzt.");
 				bpman.setBlockPosition(p.getUniqueId(), loc, true);
 				return true;
 				
-			// wenn der Befehl mit 3 Parametern für eine Location daherkommt
+			// wenn der Befehl mit 3 Parametern fÃ¼r eine Location daherkommt
 			} else if(comparams.length == 3) {
 				
 				double givenX = 0.0;
@@ -84,18 +84,18 @@ public class BlockPosition1 implements CommandExecutor {
 					return true;
 				} catch(Exception e) {
 					mh.tell(p, "Die Koordinaten konnten nicht gelesen werden!");
-					mh.tell(p, "Gültige Werte sind Ganzzahlen <0 8 15> oder <47 1 11>");
+					mh.tell(p, "GÃ¼ltige Werte sind Ganzzahlen <0 8 15> oder <47 1 11>");
 					if(brman.getConfigHelper().isDebug()) {
 						brman.getLogger().warning(e.getMessage());
 					}
 					return true;
 				}
 				
-				// Location durch übergebene Koordinaten setzen
+				// Location durch Ã¼bergebene Koordinaten setzen
 				loc = bpman.xyzToLocation(p.getWorld(), givenX, givenY, givenZ);
-				mh.tell(p, "Position 1 an §r" + givenX 
-						+ mh.getPrimaryColor() + " / §r" + givenY 
-						+ mh.getPrimaryColor() + " / §r" + givenZ 
+				mh.tell(p, "Position 1 an Â§r" + givenX 
+						+ mh.getPrimaryColor() + " / Â§r" + givenY 
+						+ mh.getPrimaryColor() + " / Â§r" + givenZ 
 						+ mh.getPrimaryColor() + " gesetzt.");
 				bpman.setBlockPosition(p.getUniqueId(), loc, true);
 				return true;
