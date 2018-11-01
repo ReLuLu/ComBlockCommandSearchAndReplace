@@ -11,9 +11,17 @@ public class BlockReplaceCommandHandler {
 	private String[] comargs;
 	private boolean isAsterisk;
 	private boolean isEvenAmountOfSARTokens = false;
+	private boolean hasQuotedTokens = false;
+	private int quotedTokensCount = 0;
 	private String newAsteriskCommand = "";
 	private HashMap<String, String> sartokens;
-	
+
+	/**
+	 * Constructor for the command helper object.
+	 * @param mh
+	 * @param player
+	 * @param args
+	 */
 	public BlockReplaceCommandHandler(MessageHandler mh, Player player, String[] args) {
 		this.mh = mh;
 		this.p = player;
@@ -25,6 +33,11 @@ public class BlockReplaceCommandHandler {
 				this.newAsteriskCommand = String.join(" ", comargs);
 			} else {
 				this.comargs = args;
+				this.quotedTokensCount = countQuotes(comargs);
+				this.hasQuotedTokens = hasQuotedTokens(quotedTokensCount);
+				if(hasQuotedTokens) {
+					this.comargs = organizeQuotedTokens(comargs);
+				}
 				this.isEvenAmountOfSARTokens = determineEvenAmountOfSearchAndReplaceTokens(comargs);
 				if(isEvenAmountOfSARTokens) {
 					sartokens = processSearchAndReplaceTokens(comargs);
@@ -104,7 +117,57 @@ public class BlockReplaceCommandHandler {
 		
 		return cutargs;
 	}
-	
+
+	/**
+	 * An even count of quotation marks makes sure the tokens are valid
+	 * @param qt count of quotation marks inside the command
+	 * @return
+	 */
+	private boolean hasQuotedTokens(int qt) {
+		return (qt % 2) == 0;
+	}
+
+	/**
+	 * Counts the occurences of a quotation mark (") to verify
+	 * whether there are tokens defined by quotation marks
+	 * @param args String array of command parameters
+	 * @return
+	 */
+	private int countQuotes(String[] args) {
+		String comparamstring = String.join(" ", args);
+		int quotecount = comparamstring.length() - comparamstring.replace("\"", "").length();
+		return quotecount;
+	}
+
+	/**
+	 * Converts the command parameter array from being split
+	 * at spaces to being split into tokens in quotes.
+	 * before: {"effect; clear"; "minecraft:effect; clear"; "tp"; "minecraft:tp"}
+	 * after: {effect clear; minecraft:effect clear; tp; minecraft:tp}
+	 * @param args
+	 * @return
+	 */
+	private String[] organizeQuotedTokens(String[] args) {
+		String comparamstring = String.join(" ", args);
+		String[] organizedargs = comparamstring.split("\"");
+
+		int emptycount = 0;
+		for(int i = 0; i < organizedargs.length; i++) {
+			if(organizedargs[i].trim().isEmpty()) {
+				emptycount++;
+			}
+		}
+		String[] cleanorganizedargs = new String[organizedargs.length - emptycount];
+		int b = 0;
+		for(String s : organizedargs) {
+			if(!s.trim().isEmpty()) {
+				cleanorganizedargs[b] = s;
+				b++;
+			}
+		}
+		return cleanorganizedargs;
+	}
+
 	/**
 	 * Checks if there player-command provides and even amount
 	 * of args inside the String[] to make sure every search
