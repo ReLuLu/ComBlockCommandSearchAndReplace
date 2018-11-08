@@ -15,11 +15,13 @@ This is where things turn complicated.
 The basic syntax looks like this
 * **_/blockreplace <<a>searchfortoken> <<a>replacewithtoken> <<a>also-look-for> <<a>and-also-replace> <<a>minecraft:give> <<a>essentials:give>_**
 so you could use it as
-* **_/blockreplace <<a>effect> <<a>minecraft:effect> <<a>tp> <<a>minecraft:tp> <<a>clear> <<a>minecraft:clear> <<a>give> <<a>minecraft:give>_**
+* **_/blockreplace <<a>effect> <<a>minecraft:effect> <<a>tp> <<a>minecraft:tp> <<a>clear> <<a>minecraft:clear> <<a>give> <<a>minecraft:give> <<a>summon> <<a>minecraft:summon>_**
 but you might want to specify more than just a word because you realised replacing clear with minecraft:clear screwed up the /effect clear command, use quotes ("") and run the process again
 * **_/blockreplace <<a>"effect minecraft:clear"> <<a>"minecraft:effect clear">_**
 and in case you realise command blocks that work with chestplates no longer work, you might want to fix what you broke before
-* **_/blockreplace <<a>"sminecraft:tpl"> <<a>"stpl">_**
+* **_/blockreplace <<a>sminecraft:tpl> <<a>stpl>_**
+but you may have noticed you've screwed up commands following an execute [...] run pattern, so you might want to change only these back
+* **_/blockreplace <<a>"run minecraft:effect"> <<a>"run effect"> <<a>"run minecraft:tp"> <<a>"run tp"> <<a>"run minecraft:clear"> <<a>"run clear"> <<a>"run minecraft:give"> <<a>"run give"> <<a>"run minecraft:summon"> <<a>"run summon">_**
 
 
 ### output
