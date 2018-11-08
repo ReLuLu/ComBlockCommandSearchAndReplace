@@ -5,7 +5,7 @@ debug: false
 
 # only check the first X characters of a command for replaceable values;
 # 0 checks everything
-search-first-chars: 20
+search-first-chars: 0
 
 # prefix message in chat
 message-prefix: '&2[&rVectorCalc&2]'
