@@ -5,8 +5,8 @@ A plugin to mass-modify commands inside of command blocks in a defined area.
 How it works
 ==================
 ### create selection
-* **_/bp1_** while pointing at the desired block or submit its coordinates
-* **_/bp1 <<x>x> <<y>y> <<z>z>_**
+* **_/bp1_** while pointing at the desired block
+* **_/bp1 <<x>x> <<y>y> <<z>z>_** or submit its coordinates
 * **_/bp2_**
 * **_/bp2 <<x>x> <<y>y> <<z>z>_**
 
