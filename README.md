@@ -17,7 +17,7 @@ The basic syntax looks like this
 so you could use it as
 * **_/blockreplace <<a>effect> <<a>minecraft:effect> <<a>tp> <<a>minecraft:tp> <<a>teleport> <<a>minecraft:teleport> <<a>clear> <<a>minecraft:clear> <<a>give> <<a>minecraft:give> <<a>summon> <<a>minecraft:summon>_**
 but you might want to specify more than just a word because you realised replacing give and clear with minecraft:clear and minecraft:give screwed up the /effect clear and /effect give commands, use quotes ("") and run the process again
-* **_/blockreplace <<a>"effect minecraft:clear"> <<a>"minecraft:effect clear"> <<a>"effect minecraft:give" "minecraft:effect give"_**
+* **_/blockreplace <<a>"effect minecraft:clear"> <<a>"minecraft:effect clear"> <<a>"effect minecraft:give"> <<a>"minecraft:effect give">_**
 and in case you realise command blocks that work with chestplates no longer work, you might want to fix what you broke before
 * **_/blockreplace <<a>sminecraft:tpl> <<a>stpl>_**
 but you may have noticed you've screwed up commands following an execute [...] run pattern, so you might want to change only these back
