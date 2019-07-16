@@ -16,6 +16,8 @@ import de.relulu.ComBlockCommandSearchAndReplace.commands.BlockCalculate;
 import de.relulu.ComBlockCommandSearchAndReplace.commands.BlockPosition1;
 import de.relulu.ComBlockCommandSearchAndReplace.commands.BlockPosition2;
 import de.relulu.ComBlockCommandSearchAndReplace.commands.BlockReplace;
+import de.relulu.ComBlockCommandSearchAndReplace.commands.BlocksNear;
+import de.relulu.ComBlockCommandSearchAndReplace.commands.BlocksCancel;
 
 /**
  * Hauptklasse für das Plugin.
@@ -44,6 +46,8 @@ public class Init extends JavaPlugin {
         this.getCommand("blockpos2").setExecutor(new BlockPosition2(brman));
         this.getCommand("blockcalc").setExecutor(new BlockCalculate(brman));
         this.getCommand("blockreplace").setExecutor(new BlockReplace(brman));
+        this.getCommand("blocksnear").setExecutor(new BlocksNear(brman));
+        this.getCommand("blockscancel").setExecutor(new BlocksCancel(brman));
     	getLogger().info(pdf.getName() + " version " + pdf.getVersion() + " by " + pdf.getAuthors().get(0) + " enabled! :)");
 	}
 	
