@@ -101,18 +101,20 @@ public class BlockPositionManager {
 	}
 	
 	/**
-	 * Löscht den [ Spieler | BlockPosition2 ] Datensatz.
-	 * @deprecated
+	 * Löscht den kompletten [ Spieler | BlockPosition ] Datensatz.
 	 * 
 	 * @param uuid UUID des ausführenden Spielers
 	 * @return
 	 */
-	@SuppressWarnings("unused")
-	private boolean removeBlockPositionLegacy(UUID uuid) {
+	public boolean removeBlockPositionAll(UUID uuid) {
+		if(blockpos1.containsKey(uuid)) {
+			blockpos1.remove(uuid);
+		}
 		if(blockpos2.containsKey(uuid)) {
 			blockpos2.remove(uuid);
-			return true;
-		} else return false;
+
+		}
+		return true;
 	}
 	
 	/**
