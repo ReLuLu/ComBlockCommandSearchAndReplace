@@ -75,11 +75,16 @@ public class BlockReplaceCommandHandler {
 				
 			} catch (Exception e) {
 				mh.tell(p, "Komblockbefehl wegen Fehler ungeändert: ", e.toString());
+				brman.getLogger().warning("old command: " + cblcommand);
+				brman.getLogger().warning("search&replace tokens ");
+				sartokens.entrySet().forEach(entry-> { brman.getLogger().warning((entry.getKey() + " " + entry.getValue())); });
+				brman.getLogger().warning("desired new command: " + newcblcommand);
+				brman.getLogger().warning(e.toString());
 			}
 		}
 		return newcblcommand;
 	}
-	
+
 	/**
 	 * Checks whether the command array does have the asterisk in front 
 	 * or not as that determines how the parameters will be handled.
@@ -213,6 +218,7 @@ public class BlockReplaceCommandHandler {
 		// weils wegen ArrayIndexOutOfBounds um die Ohren fliegen kann
 		} catch (Exception e) {
 			mh.tell(p, "Fehler beim Einlesen der Such & -Ersetzparameter", e.toString());
+			brman.getLogger().warning(e.toString());
 		}
 		
 		return searchAndReplaceTokens;
