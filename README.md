@@ -9,6 +9,8 @@ How it works
 * **_/bp1 <<x>x> <<y>y> <<z>z>_** or submit its coordinates
 * **_/bp2_**
 * **_/bp2 <<x>x> <<y>y> <<z>z>_**
+* **_/bnear <<n>n>_** or just create a cuboid selection with a radius of n blocks
+* **_/bcancel_** cancels any selection
 
 ### modify commands
 This is where things turn complicated.
